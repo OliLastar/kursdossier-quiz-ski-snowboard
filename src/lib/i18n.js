@@ -14,6 +14,7 @@ export const T = {
     cert: 'Zertifikat', certLine: 'hat das Quiz bestanden:', certAll: (n) => `Alle ${n} Fragen richtig`, certCourse: 'J+S-Leiterkurs Ski/Snowboard',
     print: 'Drucken / Als PDF speichern', priv: 'Deine Angaben werden nicht gespeichert und gehen beim Verlassen dieser Seite verloren.',
     rule: 'Es ist nur bestanden, wenn alle Fragen richtig beantwortet sind. Die richtigen Antworten werden nicht angezeigt.',
+    printHint: 'Falls sich nichts öffnet: Tastenkombination Ctrl+P (Mac: Cmd+P) verwenden oder einen Screenshot machen.',
     lang: 'Sprache',
   },
   fr: {
@@ -28,6 +29,7 @@ export const T = {
     cert: 'Certificat', certLine: 'a réussi le quiz :', certAll: (n) => `Les ${n} questions correctes`, certCourse: 'Cours de moniteurs J+S ski/snowboard',
     print: 'Imprimer / Enregistrer en PDF', priv: 'Tes données ne sont pas enregistrées et sont perdues en quittant cette page.',
     rule: 'Il n’est réussi que si toutes les questions sont correctes. Les bonnes réponses ne sont pas affichées.',
+    printHint: 'Si rien ne s’ouvre : utiliser le raccourci Ctrl+P (Mac : Cmd+P) ou faire une capture d’écran.',
     lang: 'Langue',
   },
   it: {
@@ -42,6 +44,7 @@ export const T = {
     cert: 'Certificato', certLine: 'ha superato il quiz:', certAll: (n) => `Tutte le ${n} domande corrette`, certCourse: 'Corso per monitori G+S sci/snowboard',
     print: 'Stampare / Salvare come PDF', priv: 'I tuoi dati non vengono salvati e vanno persi lasciando questa pagina.',
     rule: 'È superato solo se tutte le risposte sono corrette. Le risposte corrette non vengono mostrate.',
+    printHint: 'Se non si apre nulla: usare la combinazione Ctrl+P (Mac: Cmd+P) o fare una schermata.',
     lang: 'Lingua',
   },
 }

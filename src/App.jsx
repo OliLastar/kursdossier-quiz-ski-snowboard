@@ -181,7 +181,7 @@ function Pass({ lang, titel, n, onExit }) {
             <p className="cscore">{t.certAll(n)}</p>
             <p className="cdate">{date}</p>
           </section>
-          <p className="note no-print">{t.priv}</p>
+          <p className="note no-print">{t.priv} {t.printHint}</p>
           <div className="row no-print">
             <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>
             <button className="btn" onClick={() => window.print()}>{t.print}</button>
