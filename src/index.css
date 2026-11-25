@@ -1,0 +1,63 @@
+/* Farben und Schrift gemäss Brandportal Swiss-Ski (Farben, Schriften); Cera Pro ist lizenziert und hier nicht eingebettet. */
+:root {
+  --red: #E2001A; --red-mid: #C00418; --red-dark: #8B0E13; --ice: #32E2E8; --grey: #3E3E3E; --white: #FFFFFF;
+  --bg: #F4F4F4; --line: #D4D4D4; --muted: #6B6B6B; --ok: #7AB51D;
+  --font: 'Cera Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0 }
+body { font-family: var(--font); background: #0A0A0A url('./assets/background.jpg') center top / cover fixed no-repeat; color: var(--grey); line-height: 1.5; min-height: 100vh }
+.wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px }
+.brand { display: flex; align-items: center; gap: 12px }
+.jslogo { display: flex; background: var(--white); border-radius: 8px; padding: 4px 6px }
+.jslogo img { height: 26px; width: auto; display: block }
+.skilogo { height: 22px; width: auto; display: block }
+.langs { display: flex; gap: 6px }
+.langs button { border: 1px solid var(--line); background: var(--white); border-radius: 8px; padding: 6px 12px; font: 700 13px var(--font); cursor: pointer; color: var(--muted) }
+.langs button.active { background: var(--grey); border-color: var(--grey); color: var(--white) }
+.card { background: var(--white); border-radius: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 28px }
+h1 { font-size: 24px; line-height: 1.25; margin-bottom: 10px }
+h2 { font-size: 17px; margin: 22px 0 10px }
+h1.ok { color: var(--ok) } h1.fail { color: var(--red) }
+.tag { color: var(--red); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px }
+.lead { font-size: 15.5px; margin-bottom: 14px }
+.themes { list-style: none; display: grid; gap: 10px }
+.theme { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; text-align: left; background: var(--white); border: 1.5px solid var(--line); border-radius: 10px; padding: 14px 16px; font: 700 16px var(--font); color: var(--grey); cursor: pointer }
+.theme small { font-weight: 400; color: var(--muted); font-size: 13px; white-space: nowrap }
+.theme:hover, .theme:focus-visible { border-color: var(--red) }
+.btn { background: var(--red); color: var(--white); border: 0; border-radius: 10px; padding: 12px 24px; font: 700 15.5px var(--font); cursor: pointer }
+.btn:hover:not(:disabled) { background: var(--red-mid) }
+.btn:disabled { opacity: .4; cursor: not-allowed }
+.btn.ghost { background: var(--white); color: var(--grey); border: 1.5px solid var(--line) }
+.btn.ghost:hover { background: var(--bg) }
+button:focus-visible, input:focus-visible + span, .certform input:focus-visible { outline: 3px solid var(--grey); outline-offset: 2px }
+.row { display: flex; justify-content: space-between; gap: 10px; margin-top: 22px; flex-wrap: wrap }
+.progress { height: 6px; background: var(--line); border-radius: 3px; margin-bottom: 14px; overflow: hidden }
+.progress i { display: block; height: 100%; background: var(--red); transition: width .3s }
+.meta { font-size: 13px; color: var(--muted); font-weight: 700; margin-bottom: 10px }
+fieldset { border: 0 }
+legend { font-size: 17px; font-weight: 700; margin-bottom: 16px; color: var(--grey) }
+.opts { display: flex; flex-direction: column; gap: 10px }
+.opt { display: block; border: 1.5px solid var(--line); border-radius: 10px; padding: 13px 15px; cursor: pointer; font-size: 15px }
+.opt:hover { border-color: var(--grey) }
+.opt.sel { border-color: var(--red); background: #FDF0F2; font-weight: 700 }
+.opt input { position: absolute; opacity: 0 }
+.opt:has(input:focus-visible) { outline: 3px solid var(--grey); outline-offset: 2px }
+.certform { display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-top: 18px }
+.certform input { border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; font: 15px var(--font) }
+.cerr { color: var(--red); font-size: 13px; font-weight: 700 }
+.note { font-size: 13px; color: var(--muted); margin-top: 14px }
+.cert { border: 3px double var(--red); border-radius: 8px; padding: 36px 28px; text-align: center; margin-top: 18px; background: var(--white) }
+.certlogo { height: 28px; margin-bottom: 22px }
+.ctitle { color: var(--red); font-weight: 800; letter-spacing: 2.5px; font-size: 22px; text-transform: uppercase; margin-bottom: 18px }
+.cname { font-size: 26px; font-weight: 800; margin: 8px 0 }
+.ctheme { font-size: 20px; font-weight: 800; margin: 8px 0 4px }
+.ccourse { color: var(--muted); font-size: 14px }
+.cscore { font-size: 17px; font-weight: 700; margin: 16px 0 }
+.cdate { color: var(--muted); font-size: 14px }
+@media print {
+  .no-print { display: none !important }
+  body { background: var(--white) !important }
+  .wrap { padding: 0; max-width: none }
+  .card { box-shadow: none; padding: 0 }
+}

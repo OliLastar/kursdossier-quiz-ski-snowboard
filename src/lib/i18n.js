@@ -1,0 +1,47 @@
+export const LANGS = ['de', 'fr', 'it']
+export const LOCALE = { de: 'de-CH', fr: 'fr-CH', it: 'it-CH' }
+
+export const T = {
+  de: {
+    title: 'Wissenscheck J+S-Leiterkurs Ski/Snowboard',
+    intro: 'Wähle ein Thema. Jedes Quiz ist eigenständig. Es ist nur bestanden, wenn alle Fragen richtig beantwortet sind. Die richtigen Antworten werden nicht angezeigt. Wer nicht besteht, wiederholt das Quiz.',
+    questions: 'Fragen', start: 'Quiz starten', back: 'Zurück', next: 'Weiter', finish: 'Auswerten',
+    qOf: (i, n) => `Frage ${i} von ${n}`, themes: 'Themen', toThemes: 'Zur Themenwahl',
+    failH: 'Nicht bestanden', failTxt: (k, n) => `${k} von ${n} Fragen richtig. Für das Bestehen müssen alle Fragen richtig sein.`,
+    retry: 'Quiz wiederholen', passH: 'Bestanden', passTxt: (n) => `Alle ${n} Fragen richtig beantwortet.`,
+    certIntro: 'Gib Vor- und Nachnamen ein, um dein Zertifikat zu erstellen.',
+    first: 'Vorname', last: 'Nachname', certBtn: 'Zertifikat erstellen', certErr: 'Bitte Vor- und Nachnamen eingeben.',
+    cert: 'Zertifikat', certLine: 'hat das Quiz bestanden:', certAll: (n) => `Alle ${n} Fragen richtig`, certCourse: 'J+S-Leiterkurs Ski/Snowboard',
+    print: 'Drucken / Als PDF speichern', priv: 'Deine Angaben werden nicht gespeichert und gehen beim Verlassen dieser Seite verloren.',
+    rule: 'Es ist nur bestanden, wenn alle Fragen richtig beantwortet sind. Die richtigen Antworten werden nicht angezeigt.',
+    lang: 'Sprache',
+  },
+  fr: {
+    title: 'Check des connaissances – Cours de moniteurs J+S ski/snowboard',
+    intro: 'Choisis un thème. Chaque quiz est indépendant. Il n’est réussi que si toutes les questions sont correctes. Les bonnes réponses ne sont pas affichées. En cas d’échec, tu refais le quiz.',
+    questions: 'questions', start: 'Commencer le quiz', back: 'Retour', next: 'Suivant', finish: 'Évaluer',
+    qOf: (i, n) => `Question ${i} sur ${n}`, themes: 'Thèmes', toThemes: 'Retour aux thèmes',
+    failH: 'Non réussi', failTxt: (k, n) => `${k} question(s) correcte(s) sur ${n}. Pour réussir, toutes les réponses doivent être correctes.`,
+    retry: 'Refaire le quiz', passH: 'Réussi', passTxt: (n) => `Les ${n} questions sont correctes.`,
+    certIntro: 'Saisis ton prénom et ton nom pour créer ton certificat.',
+    first: 'Prénom', last: 'Nom', certBtn: 'Créer le certificat', certErr: 'Merci de saisir le prénom et le nom.',
+    cert: 'Certificat', certLine: 'a réussi le quiz :', certAll: (n) => `Les ${n} questions correctes`, certCourse: 'Cours de moniteurs J+S ski/snowboard',
+    print: 'Imprimer / Enregistrer en PDF', priv: 'Tes données ne sont pas enregistrées et sont perdues en quittant cette page.',
+    rule: 'Il n’est réussi que si toutes les questions sont correctes. Les bonnes réponses ne sont pas affichées.',
+    lang: 'Langue',
+  },
+  it: {
+    title: 'Check delle conoscenze – Corso per monitori G+S sci/snowboard',
+    intro: 'Scegli un tema. Ogni quiz è indipendente. È superato solo se tutte le risposte sono corrette. Le risposte corrette non vengono mostrate. Se non lo superi, ripeti il quiz.',
+    questions: 'domande', start: 'Avviare il quiz', back: 'Indietro', next: 'Avanti', finish: 'Valutare',
+    qOf: (i, n) => `Domanda ${i} di ${n}`, themes: 'Temi', toThemes: 'Torna ai temi',
+    failH: 'Non superato', failTxt: (k, n) => `${k} risposte corrette su ${n}. Per superarlo tutte le risposte devono essere corrette.`,
+    retry: 'Ripetere il quiz', passH: 'Superato', passTxt: (n) => `Tutte le ${n} domande sono corrette.`,
+    certIntro: 'Inserisci nome e cognome per creare il tuo certificato.',
+    first: 'Nome', last: 'Cognome', certBtn: 'Creare il certificato', certErr: 'Inserire nome e cognome.',
+    cert: 'Certificato', certLine: 'ha superato il quiz:', certAll: (n) => `Tutte le ${n} domande corrette`, certCourse: 'Corso per monitori G+S sci/snowboard',
+    print: 'Stampare / Salvare come PDF', priv: 'I tuoi dati non vengono salvati e vanno persi lasciando questa pagina.',
+    rule: 'È superato solo se tutte le risposte sono corrette. Le risposte corrette non vengono mostrate.',
+    lang: 'Lingua',
+  },
+}
