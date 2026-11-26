@@ -6,9 +6,11 @@ import logoJs from './assets/logo-js.png'
 import logoSki from './assets/logo-swiss-ski.png'
 
 // Adresse: #/<sprache>/<thema> – jedes Quiz hat so einen eigenen Link.
+// Enthalten die Daten nur ein Thema, ist die Seite ein einzelnes Quiz (ohne Themenwahl).
+const SINGLE = data.themen.length === 1 ? data.themen[0].slug : null
 const readHash = () => {
   const [, l, s] = window.location.hash.split('/')
-  return { lang: LANGS.includes(l) ? l : 'de', slug: data.quiz[s] ? s : null }
+  return { lang: LANGS.includes(l) ? l : 'de', slug: SINGLE || (data.quiz[s] ? s : null) }
 }
 
 export default function App() {
@@ -20,10 +22,10 @@ export default function App() {
   }, [])
   const go = (l, s) => {
     setNav({ lang: l, slug: s })
-    try { window.location.hash = `/${l}${s ? `/${s}` : ''}` } catch { /* Adresse nicht beschreibbar (z. B. eingebettete Vorschau) */ }
+    try { window.location.hash = `/${l}${s && !SINGLE ? `/${s}` : ''}` } catch { /* Adresse nicht beschreibbar (z. B. eingebettete Vorschau) */ }
   }
   const t = T[lang]
-  useEffect(() => { document.documentElement.lang = lang; document.title = t.title }, [lang, t.title])
+  useEffect(() => { document.documentElement.lang = lang; document.title = SINGLE ? `${data.themen[0].titel[lang]} – ${t.title}` : t.title }, [lang, t.title])
 
   return (
     <div className="wrap">
@@ -40,7 +42,7 @@ export default function App() {
       </header>
       <main className="card">
         {slug
-          ? <Quiz key={`${lang}/${slug}`} lang={lang} slug={slug} onExit={() => go(lang, null)} />
+          ? <Quiz key={`${lang}/${slug}`} lang={lang} slug={slug} onExit={SINGLE ? null : () => go(lang, null)} />
           : <Home lang={lang} onPick={(s) => go(lang, s)} />}
       </main>
     </div>
@@ -88,7 +90,7 @@ function Quiz({ lang, slug, onExit }) {
       <h1>{titel}</h1>
       <p className="lead">{n} {t.questions}. {t.rule}</p>
       <div className="row">
-        <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>
+        {onExit && <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>}
         <button className="btn" onClick={start}>{t.start}</button>
       </div>
     </>
@@ -131,7 +133,7 @@ function Quiz({ lang, slug, onExit }) {
         <h1 className="fail">{t.failH}</h1>
         <p className="lead">{t.failTxt(score, n)}</p>
         <div className="row">
-          <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>
+          {onExit && <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>}
           <button className="btn" onClick={retry}>{t.retry}</button>
         </div>
       </>
@@ -183,7 +185,7 @@ function Pass({ lang, titel, n, onExit }) {
           </section>
           <p className="note no-print">{t.priv} {t.printHint}</p>
           <div className="row no-print">
-            <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>
+            {onExit && <button className="btn ghost" onClick={onExit}>{t.toThemes}</button>}
             <button className="btn" onClick={() => window.print()}>{t.print}</button>
           </div>
         </>
